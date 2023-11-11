@@ -24,8 +24,6 @@ while current_y < height:
     while current_x < width:
         r, g, b = image.getpixel((current_x, current_y))
         if temp_r == r and temp_g == g and temp_b == b and temp_y == vec_y:
-            if vec_x == 0 and vec_y == -1:
-                print('first')
             looptime += 1
         elif looptime > 1:
             the_code.pop(-1)
@@ -36,8 +34,6 @@ while current_y < height:
             temp_x, temp_y, temp_r, temp_g, temp_b = vec_x, vec_y, r, g, b
             looptime = 1
         else:
-            if vec_x == 0 and vec_y == -1:
-                print('third')
             the_code.append(box_template(vec_x, vec_y, r, g, b,) + '\n')
             temp_x, temp_y, temp_r, temp_g, temp_b = vec_x, vec_y, r, g, b
         current_x += 4
