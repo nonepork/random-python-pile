@@ -34,5 +34,4 @@ for e in target:
             index+=1
             break
 
-system("clear")
 system("curl ascii.live/knot")
