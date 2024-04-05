@@ -20,7 +20,7 @@ def check_ping(ip, *args):
 
                 # and then check the response...
                 print(f"[ CHECKING ] {temp}")
-                response = subprocess.Popen(f"ping -n 1 {temp}", stdout=subprocess.PIP)
+                response = subprocess.Popen(f"ping -n 1 {temp}", stdout=subprocess.PIPE)
                 response.wait()
                 if response.poll() == 0:
                     f.write(f"{temp}\n")
