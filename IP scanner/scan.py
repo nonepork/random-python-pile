@@ -1,5 +1,6 @@
 import itertools
 import subprocess
+from VividHues import Clr
 
 def check_ping(ip, *args):
     with open("result.txt", "a") as f:
@@ -10,6 +11,7 @@ def check_ping(ip, *args):
             response.wait()
             if response.poll() == 0:
                 f.write(f"{ip}\n")
+                print("[ " + Clr.GREEN + "SUCCESS" + Clr.RS + f" ] We got one! {ip}")
         else:
             for combination in itertools.product(*args):
                 # combination contains one value from each range
@@ -24,8 +26,7 @@ def check_ping(ip, *args):
                 response.wait()
                 if response.poll() == 0:
                     f.write(f"{temp}\n")
-                else:
-                    continue
+                    print("[ " + Clr.GREEN + "SUCCESS" + Clr.RS + f" ] We got one! {temp}")
 
 
 def format_input(input: str):
